@@ -1,4 +1,6 @@
+using System.Collections;
 using System;
+using Microsoft.VisualBasic;
 
 namespace BTKAkademi
 {
@@ -6,32 +8,42 @@ namespace BTKAkademi
     {
         static void Main(string[] args)
         {
+            // Tanımlama
+            var arrayList= new ArrayList()
+            {
+                10,"BTK Akademi",true,'e'
+            };
+
+            int[] sayilar = new int[] { 23, 44, 55 };
+            arrayList.AddRange(sayilar);
+
+
+            // Ekleme
             /*
-            Console.WriteLine("Dizi boyutunu giriniz: ");
-            int boyut = Convert.ToInt32(Console.ReadLine());
-            var r = new Random();
-            int[] sayilar = new int[boyut];
+            arrayList.Add(10);
+            arrayList.Add("BTK Akademi");
+            arrayList.Add(true);
+            arrayList.Add('e');   */
 
-            for (int i = 0; i < sayilar.Length; i++)
-            {
-                sayilar[i] = r.Next(1, 10);
-            }
-            foreach (int s in sayilar)
-            {
-                Console.WriteLine($"{s,5} {s * s,5}");
-            }    */
+            // Elemana erişme - atama
+            var x = (int)arrayList[0];
+            Console.WriteLine(x + 10);
 
-            double[,] matris= new double[,] { { 1, 2, 3 }, { 2, 3, 4 } };
-            for (int i = 0;i < matris.GetLength(0);i++)
+            // Eleman silme
+            //arrayList.Remove(10);
+            //arrayList.RemoveAt(0);
+            arrayList.RemoveRange(3, 3);
+
+            // Dolaşma 
+            Console.WriteLine();
+            foreach (var e in arrayList) 
             {
-                for (int j = 0; j<matris.GetLength(1); j++)
-                {
-                    Console.WriteLine($"{matris[i, j],5}");
-                }
-                Console.WriteLine();
+                Console.Write($"{e} ");
             }
+            Console.WriteLine();
+            
+
             Console.ReadKey();
         }
     }
-    
 }
