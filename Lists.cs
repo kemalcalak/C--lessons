@@ -28,6 +28,7 @@ namespace BTKAkademi
             // Araya ekleme
             sayilar.Insert(3, 0);
             sayilar.InsertRange(4, new int[] { 80, 90 });
+            
 
             // Silme
             sayilar.RemoveAt(3);
